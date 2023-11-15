@@ -57,6 +57,24 @@
 
  }
 
+ int clear_range_bits(int n ,int i, int j){
+    int a =(~0)<<(j+1);
+    int b= (1<<i)-1;
+    int bitmask=a|b;
+     return n & bitmask;
+
+ }
+
+ int is_power_2(int n){
+    if((n & (n-1))==0){
+        cout<<"it is a power of two"<<endl;
+    }
+    else{
+        cout<<" not a power of two"<<endl;
+    }
+    
+ }
+
 int main()
 {
  oddeven(3);
@@ -75,5 +93,11 @@ int main()
   cout<<update_bit(10,2,1)<<endl;//1010->1110
 
   cout<<clear_last_bits(15,3)<<endl;//1111->1000
+
+  cout<<clear_range_bits(10,2,4)<<endl;//001010->000010
+
+
+  is_power_2(15);
+   
  return 0;
 }
